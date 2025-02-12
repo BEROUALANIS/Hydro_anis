@@ -1,4 +1,3 @@
-
 import { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'fr';
@@ -20,6 +19,7 @@ type Translations = {
       title: string;
       description1: string;
       description2: string;
+      description3: string;
       keyApplications: string;
       applications: string[];
     };
@@ -36,6 +36,20 @@ type Translations = {
       email: string;
       message: string;
       send: string;
+    };
+    footer: {
+      rights: string;
+      disclaimer: string;
+      social: {
+        facebook: string;
+        instagram: string;
+      };
+      company: {
+        title: string;
+        about: string;
+        careers: string;
+        privacy: string;
+      };
     };
   };
 };
@@ -56,13 +70,16 @@ const translations: Translations = {
     about: {
       title: "About Hydraulics",
       description1: "Hydraulics is the science of fluid mechanics that deals with the mechanical properties of fluids, particularly the flow of water in pipes, rivers, and channels.",
-      description2: "At EBH Hydraulics, we specialize in designing and implementing cutting-edge hydraulic systems that power modern machinery and equipment across various industries.",
+      description2: "At EBH Hydraulics, we specialize in designing and implementing cutting-edge hydraulic systems that power modern machinery and equipment across various industries. Our expertise spans decades of innovation in fluid power technology.",
+      description3: "From precision control systems to high-performance power units, we provide comprehensive solutions that drive efficiency and reliability in industrial applications.",
       keyApplications: "Key Applications",
       applications: [
         "Construction Equipment",
         "Manufacturing Systems",
         "Agricultural Machinery",
         "Marine Applications",
+        "Mining Operations",
+        "Aerospace Systems",
       ],
     },
     services: {
@@ -89,6 +106,20 @@ const translations: Translations = {
       message: "Message",
       send: "Send Message",
     },
+    footer: {
+      rights: "© 2024 EBH Hydraulics. All rights reserved.",
+      disclaimer: "The information provided on this website is for general informational purposes only.",
+      social: {
+        facebook: "Follow us on Facebook",
+        instagram: "Follow us on Instagram",
+      },
+      company: {
+        title: "Company Info",
+        about: "About Us",
+        careers: "Careers",
+        privacy: "Privacy Policy",
+      },
+    },
   },
   fr: {
     navigation: {
@@ -105,13 +136,16 @@ const translations: Translations = {
     about: {
       title: "À propos de l'hydraulique",
       description1: "L'hydraulique est la science de la mécanique des fluides qui traite des propriétés mécaniques des fluides, en particulier l'écoulement de l'eau dans les tuyaux, les rivières et les canaux.",
-      description2: "Chez EBH Hydraulique, nous nous spécialisons dans la conception et la mise en œuvre de systèmes hydrauliques de pointe qui alimentent les machines et équipements modernes dans diverses industries.",
+      description2: "Chez EBH Hydraulique, nous nous spécialisons dans la conception et la mise en œuvre de systèmes hydrauliques de pointe qui alimentent les machines et équipements modernes dans diverses industries. Notre expertise couvre des décennies d'innovation dans le domaine des technologies hydrauliques.",
+      description3: "De la conception de systèmes de contrôle précis aux unités de puissance de haute performance, nous fournissons des solutions complètes qui stimulent l'efficacité et la fiabilité dans les applications industrielles.",
       keyApplications: "Applications Principales",
       applications: [
         "Équipement de Construction",
         "Systèmes de Fabrication",
         "Machines Agricoles",
         "Applications Marines",
+        "Opérations de Minage",
+        "Systèmes Aéronautiques",
       ],
     },
     services: {
@@ -137,6 +171,20 @@ const translations: Translations = {
       email: "Email",
       message: "Message",
       send: "Envoyer le Message",
+    },
+    footer: {
+      rights: "© 2024 EBH Hydraulique. Tous droits réservés.",
+      disclaimer: "Les informations fournies sur ce site sont à titre informatif uniquement.",
+      social: {
+        facebook: "Suivez-nous sur Facebook",
+        instagram: "Suivez-nous sur Instagram",
+      },
+      company: {
+        title: "Information de l'entreprise",
+        about: "À propos",
+        careers: "Carrières",
+        privacy: "Politique de confidentialité",
+      },
     },
   },
 };
