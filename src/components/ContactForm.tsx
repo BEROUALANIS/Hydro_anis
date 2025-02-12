@@ -20,7 +20,7 @@ const ContactForm = () => {
       <div>
         <label
           htmlFor="name"
-          className="block text-sm font-medium text-gray-700 mb-1"
+          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
         >
           Name
         </label>
@@ -32,14 +32,14 @@ const ContactForm = () => {
             setFormData((prev) => ({ ...prev, name: e.target.value }))
           }
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-skyblue-dark focus:border-transparent transition-all duration-200"
         />
       </div>
 
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-gray-700 mb-1"
+          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
         >
           Email
         </label>
@@ -51,14 +51,14 @@ const ContactForm = () => {
             setFormData((prev) => ({ ...prev, email: e.target.value }))
           }
           required
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-skyblue-dark focus:border-transparent transition-all duration-200"
         />
       </div>
 
       <div>
         <label
           htmlFor="message"
-          className="block text-sm font-medium text-gray-700 mb-1"
+          className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-1"
         >
           Message
         </label>
@@ -70,13 +70,13 @@ const ContactForm = () => {
           }
           required
           rows={4}
-          className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent transition-all duration-200"
+          className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 rounded-lg focus:ring-2 focus:ring-primary dark:focus:ring-skyblue-dark focus:border-transparent transition-all duration-200"
         />
       </div>
 
       <button
         type="submit"
-        className="w-full bg-primary text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-all duration-200 font-medium"
+        className="w-full bg-primary dark:bg-skyblue-dark text-white py-2 px-6 rounded-lg hover:bg-opacity-90 transition-all duration-200 font-medium"
       >
         Send Message
       </button>

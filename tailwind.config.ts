@@ -37,6 +37,11 @@ export default {
           DEFAULT: "#334155",
           foreground: "#ffffff",
         },
+        skyblue: {
+          light: "#33C3F0",
+          DEFAULT: "#1EA5E9",
+          dark: "#0284C7",
+        }
       },
       keyframes: {
         "accordion-down": {

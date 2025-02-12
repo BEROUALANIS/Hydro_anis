@@ -22,24 +22,24 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
       <Navigation />
 
       {/* Hero Section */}
       <section
         id="home"
-        className="min-h-screen flex items-center justify-center relative bg-gradient-to-b from-white to-gray-100 pt-16"
+        className="min-h-screen flex items-center justify-center relative bg-gradient-to-b from-skyblue-light/20 to-white dark:from-skyblue-dark/10 dark:to-gray-900 pt-16"
       >
         <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-primary mb-6 animate-float">
+          <h1 className="text-5xl md:text-6xl font-bold text-primary dark:text-white mb-6 animate-float">
             EBH Hydraulics
           </h1>
-          <p className="text-xl text-gray-600 max-w-2xl mx-auto mb-8">
+          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
             Innovative hydraulic solutions for modern engineering challenges
           </p>
           <a
             href="#contact"
-            className="inline-block bg-primary text-white px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-200"
+            className="inline-block bg-primary dark:bg-skyblue-dark text-white px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-200"
           >
             Get in Touch
           </a>
@@ -47,37 +47,42 @@ const Index = () => {
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section id="about" className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-primary text-center mb-12">
+          <h2 className="text-3xl font-bold text-primary dark:text-white text-center mb-12">
             About Hydraulics
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 Hydraulics is the science of fluid mechanics that deals with the
                 mechanical properties of fluids, particularly the flow of water in
                 pipes, rivers, and channels.
               </p>
-              <p className="text-gray-600">
+              <p className="text-gray-600 dark:text-gray-300">
                 At EBH Hydraulics, we specialize in designing and implementing
                 cutting-edge hydraulic systems that power modern machinery and
                 equipment across various industries.
               </p>
+              <img
+                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+                alt="Hydraulic System"
+                className="rounded-lg shadow-lg w-full h-64 object-cover"
+              />
             </div>
-            <div className="bg-gray-100 p-8 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4">Key Applications</h3>
+            <div className="bg-gray-100 dark:bg-gray-700 p-8 rounded-lg">
+              <h3 className="text-xl font-semibold mb-4 text-primary dark:text-white">Key Applications</h3>
               <ul className="space-y-3">
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-gray-600 dark:text-gray-300">
                   • Construction Equipment
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-gray-600 dark:text-gray-300">
                   • Manufacturing Systems
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-gray-600 dark:text-gray-300">
                   • Agricultural Machinery
                 </li>
-                <li className="flex items-center text-gray-600">
+                <li className="flex items-center text-gray-600 dark:text-gray-300">
                   • Marine Applications
                 </li>
               </ul>
@@ -87,9 +92,9 @@ const Index = () => {
       </section>
 
       {/* Services Section */}
-      <section id="services" className="py-20 bg-gray-50">
+      <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-primary text-center mb-12">
+          <h2 className="text-3xl font-bold text-primary dark:text-white text-center mb-12">
             Our Services
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
@@ -98,26 +103,34 @@ const Index = () => {
                 title: "System Design",
                 description:
                   "Custom hydraulic system design tailored to your specific needs",
+                image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
               },
               {
                 title: "Maintenance",
                 description:
                   "Regular maintenance and repair services for hydraulic systems",
+                image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
               },
               {
                 title: "Consultation",
                 description:
                   "Expert consultation for optimizing hydraulic system performance",
+                image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
               },
             ].map((service, index) => (
               <div
                 key={index}
-                className="bg-white p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
+                className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
               >
-                <h3 className="text-xl font-semibold text-primary mb-4">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-48 object-cover rounded-lg mb-4"
+                />
+                <h3 className="text-xl font-semibold text-primary dark:text-white mb-4">
                   {service.title}
                 </h3>
-                <p className="text-gray-600">{service.description}</p>
+                <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
               </div>
             ))}
           </div>
@@ -125,37 +138,37 @@ const Index = () => {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="py-20 bg-white">
+      <section id="contact" className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-primary text-center mb-12">
+          <h2 className="text-3xl font-bold text-primary dark:text-white text-center mb-12">
             Contact Us
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-8">
               <div className="flex items-center space-x-4">
-                <Phone className="text-primary" size={24} />
-                <span className="text-gray-600">+1 234 567 890</span>
+                <Phone className="text-primary dark:text-white" size={24} />
+                <span className="text-gray-600 dark:text-gray-300">+1 234 567 890</span>
               </div>
               <div className="flex items-center space-x-4">
-                <Mail className="text-primary" size={24} />
-                <span className="text-gray-600">contact@ebhydraulics.com</span>
+                <Mail className="text-primary dark:text-white" size={24} />
+                <span className="text-gray-600 dark:text-gray-300">contact@ebhydraulics.com</span>
               </div>
               <div className="flex items-center space-x-4">
-                <MapPin className="text-primary" size={24} />
-                <span className="text-gray-600">
+                <MapPin className="text-primary dark:text-white" size={24} />
+                <span className="text-gray-600 dark:text-gray-300">
                   123 Industrial Park, Business City
                 </span>
               </div>
               <div className="flex space-x-4">
                 <a
                   href="#"
-                  className="text-primary hover:text-opacity-80 transition-colors duration-200"
+                  className="text-primary dark:text-white hover:text-opacity-80 transition-colors duration-200"
                 >
                   <Facebook size={24} />
                 </a>
                 <a
                   href="#"
-                  className="text-primary hover:text-opacity-80 transition-colors duration-200"
+                  className="text-primary dark:text-white hover:text-opacity-80 transition-colors duration-200"
                 >
                   <Instagram size={24} />
                 </a>
@@ -167,7 +180,7 @@ const Index = () => {
       </section>
 
       {/* Footer */}
-      <footer className="bg-primary text-white py-8">
+      <footer className="bg-primary dark:bg-gray-900 text-white py-8">
         <div className="container mx-auto px-4 text-center">
           <p>© 2024 EBH Hydraulics. All rights reserved.</p>
         </div>
