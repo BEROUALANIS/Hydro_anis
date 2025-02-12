@@ -19,13 +19,13 @@ const HomeCarousel = () => {
     },
     {
       image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-      title: t("services", "items", "0.title"),
-      description: t("services", "items", "0.description"),
+      title: t("services", "title"),
+      description: t("services", "items")[0].description,
     },
     {
       image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-      title: t("services", "items", "1.title"),
-      description: t("services", "items", "1.description"),
+      title: t("services", "title"),
+      description: t("services", "items")[1].description,
     },
   ];
 
@@ -37,7 +37,7 @@ const HomeCarousel = () => {
             <div className="relative h-[60vh] w-full overflow-hidden rounded-lg">
               <img
                 src={slide.image}
-                alt={slide.title}
+                alt={slide.title as string}
                 className="absolute inset-0 w-full h-full object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">

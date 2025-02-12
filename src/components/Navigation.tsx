@@ -41,7 +41,7 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <a href="#" className="text-2xl font-bold text-primary dark:text-white">
+            <a href="#" className="text-2xl font-bold text-gray-900 dark:text-white">
               EBH Hydraulics
             </a>
           </div>
@@ -68,9 +68,13 @@ const Navigation = () => {
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
+              aria-label="Toggle Dark Mode"
             >
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
-              <span className="sr-only">Toggle theme</span>
+              {theme === "dark" ? (
+                <Sun size={20} className="text-gray-700 dark:text-gray-200" />
+              ) : (
+                <Moon size={20} className="text-gray-700 dark:text-gray-200" />
+              )}
             </button>
           </div>
 
@@ -84,8 +88,13 @@ const Navigation = () => {
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
+              aria-label="Toggle Dark Mode"
             >
-              {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+              {theme === "dark" ? (
+                <Sun size={20} className="text-gray-700 dark:text-gray-200" />
+              ) : (
+                <Moon size={20} className="text-gray-700 dark:text-gray-200" />
+              )}
             </button>
             <button
               onClick={() => setIsOpen(!isOpen)}
