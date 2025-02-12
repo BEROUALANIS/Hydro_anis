@@ -2,9 +2,13 @@
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import ContactForm from "@/components/ContactForm";
+import HomeCarousel from "@/components/HomeCarousel";
 import { Facebook, Instagram, Phone, Mail, MapPin } from "lucide-react";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Index = () => {
+  const { t } = useLanguage();
+
   useEffect(() => {
     const handleScroll = () => {
       const sections = document.querySelectorAll("section");
@@ -30,19 +34,22 @@ const Index = () => {
         id="home"
         className="min-h-screen flex items-center justify-center relative bg-gradient-to-b from-skyblue-light/20 to-white dark:from-skyblue-dark/10 dark:to-gray-900 pt-16"
       >
-        <div className="container mx-auto px-4 text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-primary dark:text-white mb-6 animate-float">
-            EBH Hydraulics
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
-            Innovative hydraulic solutions for modern engineering challenges
-          </p>
-          <a
-            href="#contact"
-            className="inline-block bg-primary dark:bg-skyblue-dark text-white px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-200"
-          >
-            Get in Touch
-          </a>
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <h1 className="text-5xl md:text-6xl font-bold text-primary dark:text-white mb-6 animate-float">
+              {t("hero", "title")}
+            </h1>
+            <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto mb-8">
+              {t("hero", "subtitle")}
+            </p>
+            <a
+              href="#contact"
+              className="inline-block bg-primary dark:bg-skyblue-dark text-white px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-200"
+            >
+              {t("hero", "cta")}
+            </a>
+          </div>
+          <HomeCarousel />
         </div>
       </section>
 
@@ -50,19 +57,15 @@ const Index = () => {
       <section id="about" className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-primary dark:text-white text-center mb-12">
-            About Hydraulics
+            {t("about", "title")}
           </h2>
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <p className="text-gray-600 dark:text-gray-300">
-                Hydraulics is the science of fluid mechanics that deals with the
-                mechanical properties of fluids, particularly the flow of water in
-                pipes, rivers, and channels.
+                {t("about", "description1")}
               </p>
               <p className="text-gray-600 dark:text-gray-300">
-                At EBH Hydraulics, we specialize in designing and implementing
-                cutting-edge hydraulic systems that power modern machinery and
-                equipment across various industries.
+                {t("about", "description2")}
               </p>
               <img
                 src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
@@ -71,20 +74,18 @@ const Index = () => {
               />
             </div>
             <div className="bg-gray-100 dark:bg-gray-700 p-8 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-primary dark:text-white">Key Applications</h3>
+              <h3 className="text-xl font-semibold mb-4 text-primary dark:text-white">
+                {t("about", "keyApplications")}
+              </h3>
               <ul className="space-y-3">
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  • Construction Equipment
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  • Manufacturing Systems
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  • Agricultural Machinery
-                </li>
-                <li className="flex items-center text-gray-600 dark:text-gray-300">
-                  • Marine Applications
-                </li>
+                {t("about", "applications").map((application, index) => (
+                  <li
+                    key={index}
+                    className="flex items-center text-gray-600 dark:text-gray-300"
+                  >
+                    • {application}
+                  </li>
+                ))}
               </ul>
             </div>
           </div>
@@ -95,42 +96,29 @@ const Index = () => {
       <section id="services" className="py-20 bg-gray-50 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-primary dark:text-white text-center mb-12">
-            Our Services
+            {t("services", "title")}
           </h2>
           <div className="grid md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "System Design",
-                description:
-                  "Custom hydraulic system design tailored to your specific needs",
-                image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-              },
-              {
-                title: "Maintenance",
-                description:
-                  "Regular maintenance and repair services for hydraulic systems",
-                image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-              },
-              {
-                title: "Consultation",
-                description:
-                  "Expert consultation for optimizing hydraulic system performance",
-                image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
-              },
-            ].map((service, index) => (
+            {t("services", "items").map((service, index) => (
               <div
                 key={index}
                 className="bg-white dark:bg-gray-800 p-6 rounded-lg shadow-sm hover:shadow-md transition-shadow duration-200"
               >
                 <img
-                  src={service.image}
+                  src={[
+                    "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+                    "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+                    "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+                  ][index]}
                   alt={service.title}
                   className="w-full h-48 object-cover rounded-lg mb-4"
                 />
                 <h3 className="text-xl font-semibold text-primary dark:text-white mb-4">
                   {service.title}
                 </h3>
-                <p className="text-gray-600 dark:text-gray-300">{service.description}</p>
+                <p className="text-gray-600 dark:text-gray-300">
+                  {service.description}
+                </p>
               </div>
             ))}
           </div>
@@ -141,7 +129,7 @@ const Index = () => {
       <section id="contact" className="py-20 bg-white dark:bg-gray-800">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-primary dark:text-white text-center mb-12">
-            Contact Us
+            {t("contact", "title")}
           </h2>
           <div className="grid md:grid-cols-2 gap-12">
             <div className="space-y-8">

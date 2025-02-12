@@ -1,12 +1,14 @@
 
 import { useState, useEffect } from "react";
-import { Menu, X, Sun, Moon } from "lucide-react";
+import { Menu, X, Sun, Moon, Languages } from "lucide-react";
 import { useTheme } from "next-themes";
+import { useLanguage } from "@/contexts/LanguageContext";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { theme, setTheme } = useTheme();
+  const { language, setLanguage, t } = useLanguage();
   const [mounted, setMounted] = useState(false);
 
   useEffect(() => {
@@ -20,10 +22,10 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Services", href: "#services" },
-    { name: "Contact", href: "#contact" },
+    { name: t("navigation", "home"), href: "#home" },
+    { name: t("navigation", "about"), href: "#about" },
+    { name: t("navigation", "services"), href: "#services" },
+    { name: t("navigation", "contact"), href: "#contact" },
   ];
 
   if (!mounted) return null;
@@ -57,14 +59,28 @@ const Navigation = () => {
               ))}
             </div>
             <button
+              onClick={() => setLanguage(language === "en" ? "fr" : "en")}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
+            >
+              <Languages size={20} />
+              <span className="sr-only">Toggle Language</span>
+            </button>
+            <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
             >
               {theme === "dark" ? <Sun size={20} /> : <Moon size={20} />}
+              <span className="sr-only">Toggle theme</span>
             </button>
           </div>
 
           <div className="md:hidden flex items-center space-x-4">
+            <button
+              onClick={() => setLanguage(language === "en" ? "fr" : "en")}
+              className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
+            >
+              <Languages size={20} />
+            </button>
             <button
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
