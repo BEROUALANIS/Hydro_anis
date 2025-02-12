@@ -1,4 +1,3 @@
-
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import ContactForm from "@/components/ContactForm";
@@ -25,9 +24,9 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Define applications array separately to handle typing correctly
-  const applications = t("about", "applications") as string[];
-  const services = t("services", "items") as Array<{ title: string; description: string }>;
+  // Direct access to typed arrays from translations
+  const applications = t("about", "applications");
+  const services = t("services", "items");
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">

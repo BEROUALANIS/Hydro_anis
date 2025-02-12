@@ -1,3 +1,4 @@
+
 import { createContext, useContext, useState, ReactNode } from 'react';
 
 type Language = 'en' | 'fr';
@@ -25,10 +26,10 @@ type Translations = {
     };
     services: {
       title: string;
-      items: {
+      items: Array<{
         title: string;
         description: string;
-      }[];
+      }>;
     };
     contact: {
       title: string;
@@ -136,7 +137,7 @@ const translations: Translations = {
     about: {
       title: "À propos de l'hydraulique",
       description1: "L'hydraulique est la science de la mécanique des fluides qui traite des propriétés mécaniques des fluides, en particulier l'écoulement de l'eau dans les tuyaux, les rivières et les canaux.",
-      description2: "Chez EBH Hydraulique, nous nous spécialisons dans la conception et la mise en œuvre de systèmes hydrauliques de pointe qui alimentent les machines et équipements modernes dans diverses industries. Notre expertise couvre des décennies d'innovation dans le domaine des technologies hydrauliques.",
+      description2: "Chez EBH Hydraulique, nous nous spécialisons dans la conception et la mise en œuvre de systèmes hydrauliques de pointe qui alimentent les machines et équipements modernes dans diverses industries.",
       description3: "De la conception de systèmes de contrôle précis aux unités de puissance de haute performance, nous fournissons des solutions complètes qui stimulent l'efficacité et la fiabilité dans les applications industrielles.",
       keyApplications: "Applications Principales",
       applications: [
@@ -189,10 +190,15 @@ const translations: Translations = {
   },
 };
 
+type TranslationValue<T> = T extends (infer U)[] ? U[] : T extends object ? T : string;
+
 type LanguageContextType = {
   language: Language;
   setLanguage: (lang: Language) => void;
-  t: (section: keyof Translations['en'], key: string, subKey?: string) => string;
+  t: <K extends keyof Translations['en'], P extends keyof Translations['en'][K]>(
+    section: K,
+    key: P
+  ) => TranslationValue<Translations['en'][K][P]>;
 };
 
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
@@ -200,12 +206,11 @@ const LanguageContext = createContext<LanguageContextType | undefined>(undefined
 export const LanguageProvider = ({ children }: { children: ReactNode }) => {
   const [language, setLanguage] = useState<Language>('en');
 
-  const t = (section: keyof Translations['en'], key: string, subKey?: string) => {
-    const translation = translations[language][section] as any;
-    if (subKey) {
-      return translation[key][subKey] || key;
-    }
-    return translation[key] || key;
+  const t = <K extends keyof Translations['en'], P extends keyof Translations['en'][K]>(
+    section: K,
+    key: P
+  ): TranslationValue<Translations['en'][K][P]> => {
+    return translations[language][section][key] as TranslationValue<Translations['en'][K][P]>;
   };
 
   return (
