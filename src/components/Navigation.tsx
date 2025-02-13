@@ -22,11 +22,20 @@ const Navigation = () => {
   }, []);
 
   const navItems = [
-    { name: t("navigation", "home"), href: "#home" },
-    { name: t("navigation", "about"), href: "#about" },
-    { name: t("navigation", "services"), href: "#services" },
-    { name: t("navigation", "contact"), href: "#contact" },
+    { name: t("navigation", "home"), href: "home" },
+    { name: t("navigation", "about"), href: "about" },
+    { name: t("navigation", "services"), href: "services" },
+    { name: t("navigation", "contact"), href: "contact" },
   ];
+
+  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    e.preventDefault();
+    const element = document.getElementById(href);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+      setIsOpen(false); // Close mobile menu if open
+    }
+  };
 
   if (!mounted) return null;
 
@@ -41,7 +50,11 @@ const Navigation = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0">
-            <a href="#" className="text-2xl font-bold text-gray-900 dark:text-white">
+            <a 
+              href="#home" 
+              className="text-2xl font-bold text-gray-900 dark:text-white"
+              onClick={(e) => handleNavClick(e, 'home')}
+            >
               EBH Hydraulics
             </a>
           </div>
@@ -51,7 +64,8 @@ const Navigation = () => {
               {navItems.map((item) => (
                 <a
                   key={item.name}
-                  href={item.href}
+                  href={`#${item.href}`}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className="text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-white transition-colors duration-200 text-sm font-medium"
                 >
                   {item.name}
@@ -113,9 +127,9 @@ const Navigation = () => {
             {navItems.map((item) => (
               <a
                 key={item.name}
-                href={item.href}
+                href={`#${item.href}`}
+                onClick={(e) => handleNavClick(e, item.href)}
                 className="block px-3 py-2 text-gray-700 dark:text-gray-200 hover:text-primary dark:hover:text-white transition-colors duration-200 text-base font-medium"
-                onClick={() => setIsOpen(false)}
               >
                 {item.name}
               </a>

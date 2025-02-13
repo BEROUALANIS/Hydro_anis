@@ -182,21 +182,21 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div className="space-y-4 animate-fade-in">
-              <h3 className="text-lg font-semibold">{t("footer", "company.title")}</h3>
+              <h3 className="text-lg font-semibold">{t("footer", "company").title}</h3>
               <ul className="space-y-2">
                 <li>
                   <a href="#" className="hover:text-gray-300 transition-colors duration-200">
-                    {t("footer", "company.about")}
+                    {t("footer", "company").about}
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-gray-300 transition-colors duration-200">
-                    {t("footer", "company.careers")}
+                    {t("footer", "company").careers}
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-gray-300 transition-colors duration-200">
-                    {t("footer", "company.privacy")}
+                    {t("footer", "company").privacy}
                   </a>
                 </li>
               </ul>
@@ -207,6 +207,7 @@ const Index = () => {
                 <a
                   href="#"
                   className="hover:text-gray-300 transition-colors duration-200 flex items-center gap-2"
+                  title={t("footer", "social").facebook}
                 >
                   <Facebook size={20} />
                   Facebook
@@ -214,6 +215,7 @@ const Index = () => {
                 <a
                   href="#"
                   className="hover:text-gray-300 transition-colors duration-200 flex items-center gap-2"
+                  title={t("footer", "social").instagram}
                 >
                   <Instagram size={20} />
                   Instagram
