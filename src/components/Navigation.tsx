@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import { Menu, X, Sun, Moon, Languages } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useLanguage } from "@/contexts/LanguageContext";
+import SearchBar from "./SearchBar";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -33,7 +34,7 @@ const Navigation = () => {
     const element = document.getElementById(href);
     if (element) {
       element.scrollIntoView({ behavior: "smooth" });
-      setIsOpen(false); // Close mobile menu if open
+      setIsOpen(false);
     }
   };
 
@@ -72,6 +73,7 @@ const Navigation = () => {
                 </a>
               ))}
             </div>
+            <SearchBar />
             <button
               onClick={() => setLanguage(language === "en" ? "fr" : "en")}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
@@ -93,6 +95,7 @@ const Navigation = () => {
           </div>
 
           <div className="md:hidden flex items-center space-x-4">
+            <SearchBar />
             <button
               onClick={() => setLanguage(language === "en" ? "fr" : "en")}
               className="p-2 rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200"
