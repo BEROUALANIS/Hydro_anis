@@ -1,3 +1,4 @@
+
 import { useEffect } from "react";
 import Navigation from "@/components/Navigation";
 import ContactForm from "@/components/ContactForm";
@@ -24,9 +25,19 @@ const Index = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  const handleContactClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const contactSection = document.getElementById('contact');
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   // Direct access to typed arrays from translations
   const applications = t("about", "applications");
   const services = t("services", "items");
+  const footerCompany = t("footer", "company");
+  const footerSocial = t("footer", "social");
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900">
@@ -47,6 +58,7 @@ const Index = () => {
             </p>
             <a
               href="#contact"
+              onClick={handleContactClick}
               className="group inline-flex items-center gap-2 bg-primary dark:bg-skyblue-dark text-white px-8 py-3 rounded-lg hover:bg-opacity-90 transition-all duration-200"
             >
               {t("hero", "cta")}
@@ -159,14 +171,14 @@ const Index = () => {
                 <a
                   href="#"
                   className="text-primary dark:text-white hover:text-opacity-80 transition-colors duration-200 hover:scale-110"
-                  title={t("footer", "social.facebook")}
+                  title={footerSocial.facebook}
                 >
                   <Facebook size={24} />
                 </a>
                 <a
                   href="#"
                   className="text-primary dark:text-white hover:text-opacity-80 transition-colors duration-200 hover:scale-110"
-                  title={t("footer", "social.instagram")}
+                  title={footerSocial.instagram}
                 >
                   <Instagram size={24} />
                 </a>
@@ -182,21 +194,21 @@ const Index = () => {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div className="space-y-4 animate-fade-in">
-              <h3 className="text-lg font-semibold">{t("footer", "company").title}</h3>
+              <h3 className="text-lg font-semibold">{footerCompany.title}</h3>
               <ul className="space-y-2">
                 <li>
                   <a href="#" className="hover:text-gray-300 transition-colors duration-200">
-                    {t("footer", "company").about}
+                    {footerCompany.about}
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-gray-300 transition-colors duration-200">
-                    {t("footer", "company").careers}
+                    {footerCompany.careers}
                   </a>
                 </li>
                 <li>
                   <a href="#" className="hover:text-gray-300 transition-colors duration-200">
-                    {t("footer", "company").privacy}
+                    {footerCompany.privacy}
                   </a>
                 </li>
               </ul>
@@ -207,7 +219,7 @@ const Index = () => {
                 <a
                   href="#"
                   className="hover:text-gray-300 transition-colors duration-200 flex items-center gap-2"
-                  title={t("footer", "social").facebook}
+                  title={footerSocial.facebook}
                 >
                   <Facebook size={20} />
                   Facebook
@@ -215,7 +227,7 @@ const Index = () => {
                 <a
                   href="#"
                   className="hover:text-gray-300 transition-colors duration-200 flex items-center gap-2"
-                  title={t("footer", "social").instagram}
+                  title={footerSocial.instagram}
                 >
                   <Instagram size={20} />
                   Instagram
