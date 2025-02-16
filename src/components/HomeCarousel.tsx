@@ -13,7 +13,7 @@ const HomeCarousel = () => {
 
   const slides = [
     {
-      image: "https://municipalwellandpump.com/wp-content/uploads/elementor/thumbs/slideshow8188_2-pd2crs1w1km9phy7egnqfnf7nxmzhveihswbyjhhfs.jpg",
+      image: "https://th.bing.com/th/id/OIP.aH7yqqPS44fGd_3oYbvbNQHaEz?rs=1&pid=ImgDetMain",
       title: t("hero", "title"),
       description: t("hero", "subtitle"),
     },
@@ -23,7 +23,7 @@ const HomeCarousel = () => {
       description: t("services", "items")[0].description,
     },
     {
-      image: "https://th.bing.com/th/id/OIP.TlVcgOWuV8oBdC03BOJ81wHaE7?rs=1&pid=ImgDetMain",
+      image: "https://th.bing.com/th/id/R.b5b77b559455154c6f41af95d13f46d7?rik=ieVjPQ7zsplQzg&pid=ImgRaw&r=0",
       title: t("services", "title"),
       description: t("services", "items")[1].description,
     },
