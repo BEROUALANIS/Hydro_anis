@@ -87,7 +87,7 @@ const Index = () => {
                 {t("about", "description3")}
               </p>
               <img
-                src="https://images.unsplash.com/photo-1488590528505-98d2b5aba04b"
+                src="https://th.bing.com/th/id/R.69ffaff4b531824a2d99b0aa0e40d229?rik=TOtT2OUxJ80yiQ&riu=http%3a%2f%2fmetropolitanind.com%2fwp-content%2fuploads%2f2018%2f05%2fwater-treatment-radium-removal-system-airport-road.jpg&ehk=D036tdAQt8izWRkhMW%2fVzpJlteFEf3e%2bv05iMbXnBqo%3d&risl=&pid=ImgRaw&r=0"
                 alt="Hydraulic System"
                 className="rounded-lg shadow-lg w-full h-64 object-cover hover:scale-[1.02] transition-transform duration-300"
               />
