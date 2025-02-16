@@ -13,7 +13,7 @@ const HomeCarousel = () => {
 
   const slides = [
     {
-      image: "https://th.bing.com/th/id/OIP.aH7yqqPS44fGd_3oYbvbNQHaEz?rs=1&pid=ImgDetMain",
+      image: "https://th.bing.com/th/id/R.b5b77b559455154c6f41af95d13f46d7?rik=ieVjPQ7zsplQzg&pid=ImgRaw&r=0",
       title: t("hero", "title"),
       description: t("hero", "subtitle"),
     },
@@ -23,7 +23,7 @@ const HomeCarousel = () => {
       description: t("services", "items")[0].description,
     },
     {
-      image: "https://th.bing.com/th/id/R.b5b77b559455154c6f41af95d13f46d7?rik=ieVjPQ7zsplQzg&pid=ImgRaw&r=0",
+      image: "https://www.mon-energie-verte.com/wp-content/uploads/sites/2/2019/10/258-l-hydroelectricite-2048x1366.jpg",
       title: t("services", "title"),
       description: t("services", "items")[1].description,
     },
