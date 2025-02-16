@@ -13,17 +13,17 @@ const HomeCarousel = () => {
 
   const slides = [
     {
-      image: "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+      image: "https://municipalwellandpump.com/wp-content/uploads/elementor/thumbs/slideshow8188_2-pd2crs1w1km9phy7egnqfnf7nxmzhveihswbyjhhfs.jpg",
       title: t("hero", "title"),
       description: t("hero", "subtitle"),
     },
     {
-      image: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
+      image: "https://th.bing.com/th/id/R.6cd6ea0be812d9a3891cdef7ea05397e?rik=cDqjBT8LaD7OSA&riu=http%3a%2f%2fwww.a2mh.com%2fwp-content%2fuploads%2f2018%2f01%2fPassage-au-banc-dune-pompe-hydraulique-EATON.jpg&ehk=XDbh6AcA1L9wC%2bkwwoybP%2bdDguyTGdfdXj6qDppSAeI%3d&risl=&pid=ImgRaw&r=0",
       title: t("services", "title"),
       description: t("services", "items")[0].description,
     },
     {
-      image: "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
+      image: "https://th.bing.com/th/id/OIP.TlVcgOWuV8oBdC03BOJ81wHaE7?rs=1&pid=ImgDetMain",
       title: t("services", "title"),
       description: t("services", "items")[1].description,
     },
