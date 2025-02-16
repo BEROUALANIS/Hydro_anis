@@ -126,9 +126,9 @@ const Index = () => {
               >
                 <img
                   src={[
-                    "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7",
-                    "https://images.unsplash.com/photo-1649972904349-6e44c42644a7",
-                    "https://images.unsplash.com/photo-1488590528505-98d2b5aba04b",
+                    "https://th.bing.com/th/id/R.84fb6b8e872240d6516ac95d3ee57f5a?rik=R96iHmpMORSCSg&riu=http%3a%2f%2fwww.mc-generale-hydraulique.com%2fmedias%2fimages%2fdsc0717.jpg&ehk=aMaEION6bdsE5SUZryg9gefrvjFrkuaKzDEVXofSIcQ%3d&risl=&pid=ImgRaw&r=0",
+                    "https://th.bing.com/th/id/R.04f3f6aa29a4c6e80e0462425b6dc7de?rik=2Kpp%2fK7yXUQo4g&pid=ImgRaw&r=0",
+                    "https://th.bing.com/th/id/OIP.mki-srLMJxQIARa2iMRk5gHaE-?pid=ImgDet&w=474&h=318&rs=1",
                   ][index]}
                   alt={service.title}
                   className="w-full h-48 object-cover rounded-lg mb-4 hover:scale-[1.02] transition-transform duration-300"
